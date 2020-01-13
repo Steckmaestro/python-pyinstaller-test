@@ -10,12 +10,8 @@ jobs:
         uses: bryan-nice/slack-notification@master
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_TITLE: 'Slack Notification Demo'
-          SLACK_MESSAGE: 'Demo''ing the Slack Notification'
-          SLACK_ICON: 'https://github.com/<Github User>.png?size=48'
-          SLACK_CHANNEL: 'demo-channel'
-          SLACK_COLOR: '#efefef'
-          SLACK_USERNAME: 'demo-bot'
+          SLACK_TITLE: 'GitHub Action triggered!'
+          SLACK_MESSAGE: 'A GitHub action was triggered in a connected repository'
           GITHUB_ACTOR: ${GITHUB_ACTOR}
           GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}
           GITHUB_REF: ${GITHUB_REF}
