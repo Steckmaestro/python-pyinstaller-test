@@ -1,0 +1,20 @@
+on: push
+name: Slack Notification
+jobs:
+  slackNotification:
+    name: Slack Notification
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Slack Notification Demo
+        uses: bryan-nice/slack-notification@master
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_TITLE: 'GitHub Action triggered!'
+          SLACK_MESSAGE: 'A GitHub action was triggered in a connected repository'
+          GITHUB_ACTOR: ${GITHUB_ACTOR}
+          GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}
+          GITHUB_REF: ${GITHUB_REF}
+          GITHUB_ACTION: ${GITHUB_ACTION}
+          GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}
+          GITHUB_WORKFLOW: ${GITHUB_WORKFLOW}
