@@ -11,3 +11,5 @@ def test_base_route():
     response = client.get(url)
     assert response.get_data() == b'<h1>Hello, welcome to our mock calculator</h1>'
     assert response.status_code == 200
+
+# Added a new comment just to show GitHub Actions
