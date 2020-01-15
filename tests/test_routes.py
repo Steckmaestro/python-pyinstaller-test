@@ -9,6 +9,7 @@ def test_base_route():
     client = app.test_client()
     url = '/'
     response = client.get(url)
+    print(response)
     assert response.get_data() == b'<h1>Hello, welcome to our mock calculator</h1>'
     assert response.status_code == 200
 
